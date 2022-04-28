@@ -687,14 +687,18 @@ fill: currentColor;
     height: 100%;
     top: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    transition: opacity 250ms,;
+    transition: opacity 450ms, visibility 350ms var(--timing-function);
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.1);
 }
 
 .modal {
     position: absolute;
+
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 528px;
     height: 581px;
     background-color: var(--primary-bg-color);
@@ -702,6 +706,8 @@ fill: currentColor;
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    transform: translate(-50%, -50%); 
+    transition: transform 400ms linear;
 }
 
 .modal-close-btn {
